@@ -55,7 +55,7 @@ input:focus, textarea:focus{
 	background: lightgray;
 }
 
-@
+
 
 .titulo
 {
@@ -181,6 +181,7 @@ input:focus, textarea:focus{
 	border: 1px solid #1F313C;
 	border-radius: 8px;
 	margin-bottom: 20px;
+	margin-top: 65px;
 }
 .guitarra.b {
 	height: 270px;
@@ -228,7 +229,7 @@ footer{
 {
 	display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 60%;
   
 
 
@@ -361,10 +362,35 @@ table, td, th{
 	top: 20px;
 	cursor: pointer;
 	z-index: 3;
+	display: none;
 }
 
 @media screen and (max-width: 800px){
 	
+
+/* precios*/
+.tabla{
+	margin: 50px 20px;
+	
+
+}
+table{
+	border: 1px solid #273b47;
+}
+
+
+.tabla .contenedor{
+	overflow: auto;
+	
+
+
+}
+
+
+
+/* precios*/
+
+
 
 	.menu{
 		margin-left: 0px;
@@ -525,11 +551,16 @@ table, td, th{
 
 @media screen and (max-width: 500px){
 
+	.burger-button{
+		display: block;
+		position: fixed;
+	}
+
 	.menu{
 
 		
 		background: rgba(255, 60, 88, .8);
-		position: absolute;
+		position: fixed;
 		left: -100%;
 		top: 0;
 		right: 0;
@@ -580,4 +611,19 @@ table, td, th{
 		font-size: 30px;
 
 	}
+}
+
+.video-responsive-contenedor{
+	position: relative;
+	padding-top: 56.4%
+	
+}
+.video-responsive-src{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height:100%;
 }

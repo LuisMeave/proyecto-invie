@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet"  href="css/invie.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Allerta" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
 	<title>Precios</title>
 
 </head>
@@ -13,7 +14,8 @@
 			<figure class="logotipo">  <!--logotipo-->
 				<img src="images/invie.png" width="186" height="60" alt= "Invie logotipo"/>
 			</figure>
-			<nav class="menu"> <!--menu-->
+			<span class="icon-menu burger-button" id="burger-button" ></span>
+			<nav class="menu" id="menu"> <!--menu-->
 				<ul>
 					<li>
 						<a href="index.html">Home</a>
@@ -37,6 +39,9 @@
 						<th>Modelo</th>
 						<th>Precio</th>
 						<th>Descripción</th>
+						<th>Modelo</th>
+						<th>Precio</th>
+						<th>Descripción</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -44,13 +49,24 @@
 						<td>Invie Classic</td>
 						<td>$xxxxx</td>
 						<td>una guitarra muy pro</td>
+						<td>Invie Classic</td>
+						<td>$xxxxx</td>
+						<td>una guitarra muy pro</td>
+
 					</tr>
 					<tr>
 						<td>Invie Acustic</td>
 						<td>$xxxxx</td>
 						<td>una guitarra muy pro</td>
+						<td>Invie Acustic</td>
+						<td>$xxxxx</td>
+						<td>una guitarra muy pro</td>
+
 					</tr>
 					<tr>
+						<td>Invie Custom</td>
+						<td>$xxxxx</td>
+						<td>una guitarra muy pro</td>
 						<td>Invie Custom</td>
 						<td>$xxxxx</td>
 						<td>una guitarra muy pro</td>
@@ -124,11 +140,46 @@
 					<textarea name="comentarios" id="comentarios" cols="30" rows="7">       </textarea>
 					<input class="boton" type="submit" name=""/>
 				</div>
-
 		</div>			
-		
-	
 	</footer>
+	
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.js"></script>
+	<script >
+	var consulta = window.matchMedia("(max-width: 500px)");
+	var $burgerButton = document.getElementById("burger-button");
+	var $menu = document.getElementById("menu");
+		$burgerButton.addEventListener("touchstart",toogleMenu );
+	function toogleMenu()
+		{
+			$menu.classList.toggle("active");
+		};
+	consulta.addListener(mediaQuery); 
+		
+	function mediaQuery()
+	{
+		if (consulta.matches){
+			
+			console.log("se cumplio la condicion");
+			$burgerButton.addEventListener("touchstart",toogleMenu );
+			/*function toogleMenu()
+		{
+			$menu.classList.toggle("active");
+		};*/
+
+		}else{
+			console.log("no se cumpio la condicion");
+			
+			$burgerButton.removeEventListener("touchstart",toogleMenu );
+		}	
+
+	}	
+
+	var bLazy = new Blazy({
+    selector: "img"
+});
+
+
+	</script>
 
 
 </body>
